@@ -1,13 +1,13 @@
 {
-    "version":  "0.1.52",
+    "version":  "0.1.53",
     "apk":  {
-                "name":  "Rylune-0.1.52-release.apk",
-                "size":  16313088,
-                "sha256":  "6453aa0966df95538e9799b273050cfc753f96f41b3af2a09847594909e3d15d",
+                "name":  "Rylune-0.1.53-release.apk",
+                "size":  16313592,
+                "sha256":  "93ec110e6f0330bd71e10ca12c4c5bcccfdf957202f71dc10ec0a6aef42de464",
                 "urls":  [
-                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.52/Rylune-0.1.52-release.apk",
-                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.52-release.apk"
+                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.53/Rylune-0.1.53-release.apk",
+                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.53-release.apk"
                          ]
             },
-    "notes":  "## Rylune 0.1.52\n\n详情页加载中不再被「检查章节更新」自己打断；空快照自动重拉。\n\n- 定位到「一拳超人」这类多话作品的真实情况：loadInfo 要分页拉 300+ 话、耗时 13 秒左右属正常；这期间点「检查章节更新」会把正在跑的加载取消，界面就显示“加载详情失败”。\n- 现在加载中该项会变成「正在检查章节更新…」并禁用，不会自己打断自己。\n- 协程被取消（切页/离开组合）不再记成失败、也不再写错误日志。\n- 空章节快照一律视为没有缓存并重新拉取 —— 源故障期间打开过的作品，重新进入一次就会恢复。\n- 新增诊断日志：loadInfo 解析：\u003cid\u003e，章节 N 话（用于区分“解析出 0 话”和“界面没显示”）。"
+    "notes":  "## Rylune 0.1.53\n\n多话作品详情加载更快：章节分页改成并发拉取。\n\n- 300+ 话的作品（比如一拳超人）原来要一页一页串行翻，实测 13.3 秒才出章节列表。\n- 现在剩余分页并发拉取，总耗时接近\"最慢的那一页\"，章节顺序保持不变。\n- 配合上一版：加载期间「检查章节更新」会被禁用，不会再把正在跑的加载打断。"
 }
