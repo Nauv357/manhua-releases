@@ -1,12 +1,12 @@
 {
-    "version":  "0.1.34",
+    "version":  "0.1.35",
     "apk":  {
-                "name":  "Rylune-0.1.34-release.apk",
-                "size":  16291124,
-                "sha256":  "65ab359ae4e4706c3fcb0b06d597f860766ad334b11f983ec21ae790d471ff06",
+                "name":  "Rylune-0.1.35-release.apk",
+                "size":  16291388,
+                "sha256":  "0853306c6e44af6e5c9eac57b2e7b92ef409158ec2abe803492ac162639a2834",
                 "urls":  [
-                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.34/Rylune-0.1.34-release.apk"
+                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.35/Rylune-0.1.35-release.apk"
                          ]
             },
-    "notes":  "## Rylune 0.1.34\n\n这次把更新的下载线路换成国内可用的加速通道，并且下载可以在后台进行、不再锁住应用。\n\n- 更新包优先走实测可用的加速线路（gh-proxy.org / gh-proxy.com / ghproxy.net），GitHub 直连只作兜底，不再一上来就硬啃 GitHub。\n- 下载更新时会出现「后台下载」按钮：点它就能继续看漫画，下载在后台继续，进度在「设置 → 应用更新」里看。\n- 更新清单也换掉了已失效的线路（ghfast.top 实测超时），检查更新更快。\n- Bangumi 默认走自建中转（首页推荐、榜单、搜索、读者短评都正常，不用挂代理）；封面仍走 Cloudflare 线路，加载更快。\n- 首页新增「热门推荐」：当季新作、近一年佳作、长期爆款混排，「精选推荐」保留（每天换一批）。"
+    "notes":  "## Rylune 0.1.35\n\n修一个偶发问题：连续阅读里图片偶尔能横向滑出屏幕（左边露出黑边）。\n\n- 连续阅读、图片「适应屏幕」时，偶尔图片能左右滑动、左边露黑边 —— 现在不会了。\n- 原因是双指轻碰会把手抖的 4% 缩放留下来（图比屏幕宽 106px），翻页也不会重置；现在捏合结束会把这种\"没真正放大\"的缩放归位。\n- 真正放大（比如放到 1.5 倍）仍然保持，不受影响。"
 }
