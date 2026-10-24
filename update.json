@@ -1,13 +1,13 @@
 {
-    "version":  "0.1.47",
+    "version":  "0.1.48",
     "apk":  {
-                "name":  "Rylune-0.1.47-release.apk",
-                "size":  16311936,
-                "sha256":  "9341719f366abf5e67400b3c85414e63978b26075d0cd27e370b9a2216fd5533",
+                "name":  "Rylune-0.1.48-release.apk",
+                "size":  16312252,
+                "sha256":  "7f8a3e340815f2e40ec3906aba842b7d3464923e0fd4a4bde0d67dd0d19d5336",
                 "urls":  [
-                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.47/Rylune-0.1.47-release.apk",
-                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.47-release.apk"
+                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.48/Rylune-0.1.48-release.apk",
+                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.48-release.apk"
                          ]
             },
-    "notes":  "## Rylune 0.1.47\n\n安装改用系统 PackageInstaller：修「点安装后一闪、什么也没装」。\n\n- 旧实现用 ACTION_INSTALL_PACKAGE 拉起安装器，在 MIUI 这类 ROM 上会\"一闪就没\"（权限其实是有的）。\n- 现在优先用官方 PackageInstaller 会话安装：把安装包交给系统安装器，由它弹确认框；只有会话方式失败才退回旧接口，再失败还有第三种尝试。\n- 安装结果会回传：成功就显示\"已是最新\"，失败会把系统给的原因显示出来，不再没有任何反馈。\n- 缺「安装未知应用」权限时会先弹提示再跳设置（不会再像\"应用自己退出\"）。"
+    "notes":  "## Rylune 0.1.48\n\n修「下载完成后闪退」：状态读取不一致导致的类型崩溃。\n\n- 崩溃日志反混淆后是 ClassCastException：AppUpdateState$Ready 被强转成 $Downloading。\n- 原因：设置页的进度条在「绘制时」才读状态，而那一刻下载刚好完成、状态已经变成「已就绪」，于是强转崩了。\n- 现在先取一份本次组合内固定的状态快照，判断与取值都用它；主界面几个更新弹窗也一并改成这种写法。\n- 这版还带着上一版的安装方式改进（PackageInstaller 会话），装完请再更新一次验证完整链路。"
 }
