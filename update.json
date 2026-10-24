@@ -1,13 +1,13 @@
 {
-    "version":  "0.1.49",
+    "version":  "0.1.50",
     "apk":  {
-                "name":  "Rylune-0.1.49-release.apk",
-                "size":  16312444,
-                "sha256":  "5c5aa850ae8711ad367a4cdecf429e84dd375eff70413a1b1ca3c784a6696ddc",
+                "name":  "Rylune-0.1.50-release.apk",
+                "size":  16312668,
+                "sha256":  "c71fdc20bd8bfcd64fc33032132d4aee623b4e1c38f7d165fa594d396ec11078",
                 "urls":  [
-                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.49/Rylune-0.1.49-release.apk",
-                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.49-release.apk"
+                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.50/Rylune-0.1.50-release.apk",
+                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.50-release.apk"
                          ]
             },
-    "notes":  "## Rylune 0.1.49\n\n验证版：确认「下载完成后闪退」已修，并走通系统安装会话。\n\n- 这一版内容与 0.1.48 相同，只为了让你在 0.1.48 上实测一次完整的「检查更新 → 下载 → 安装」链路。\n- 0.1.48 已修掉下载完成瞬间的类型崩溃（设置页进度条在绘制时读到\"已就绪\"状态），并改用系统 PackageInstaller 会话安装。\n- 如果你是从 0.1.46 直接升上来的，这个版本正好验证那两处修复是否都生效。"
+    "notes":  "## Rylune 0.1.50\n\n真·修好「源恢复了但章节列表还是空的」：详情页的 12 小时缓存短路。\n\n- 上次只改了仓库层的缓存逻辑，但详情页走的是另一条路：它先读本机快照，如果快照在 12 小时内就直接用、根本不刷新 —— 于是那份\"空章节\"快照会一直生效。\n- 现在章节为空的快照一律当作没有缓存：忽略它、重新拉取，拉到正常结果后覆盖。\n- 这条对\"源故障期间打开过的作品\"都有效，重新打开一次就会恢复。"
 }
