@@ -1,13 +1,13 @@
 {
-    "version":  "0.1.48",
+    "version":  "0.1.49",
     "apk":  {
-                "name":  "Rylune-0.1.48-release.apk",
-                "size":  16312252,
-                "sha256":  "7f8a3e340815f2e40ec3906aba842b7d3464923e0fd4a4bde0d67dd0d19d5336",
+                "name":  "Rylune-0.1.49-release.apk",
+                "size":  16312444,
+                "sha256":  "5c5aa850ae8711ad367a4cdecf429e84dd375eff70413a1b1ca3c784a6696ddc",
                 "urls":  [
-                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.48/Rylune-0.1.48-release.apk",
-                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.48-release.apk"
+                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.49/Rylune-0.1.49-release.apk",
+                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.49-release.apk"
                          ]
             },
-    "notes":  "## Rylune 0.1.48\n\n修「下载完成后闪退」：状态读取不一致导致的类型崩溃。\n\n- 崩溃日志反混淆后是 ClassCastException：AppUpdateState$Ready 被强转成 $Downloading。\n- 原因：设置页的进度条在「绘制时」才读状态，而那一刻下载刚好完成、状态已经变成「已就绪」，于是强转崩了。\n- 现在先取一份本次组合内固定的状态快照，判断与取值都用它；主界面几个更新弹窗也一并改成这种写法。\n- 这版还带着上一版的安装方式改进（PackageInstaller 会话），装完请再更新一次验证完整链路。"
+    "notes":  "## Rylune 0.1.49\n\n验证版：确认「下载完成后闪退」已修，并走通系统安装会话。\n\n- 这一版内容与 0.1.48 相同，只为了让你在 0.1.48 上实测一次完整的「检查更新 → 下载 → 安装」链路。\n- 0.1.48 已修掉下载完成瞬间的类型崩溃（设置页进度条在绘制时读到\"已就绪\"状态），并改用系统 PackageInstaller 会话安装。\n- 如果你是从 0.1.46 直接升上来的，这个版本正好验证那两处修复是否都生效。"
 }
