@@ -1,13 +1,13 @@
 {
-    "version":  "0.1.50",
+    "version":  "0.1.52",
     "apk":  {
-                "name":  "Rylune-0.1.50-release.apk",
-                "size":  16312668,
-                "sha256":  "c71fdc20bd8bfcd64fc33032132d4aee623b4e1c38f7d165fa594d396ec11078",
+                "name":  "Rylune-0.1.52-release.apk",
+                "size":  16313088,
+                "sha256":  "6453aa0966df95538e9799b273050cfc753f96f41b3af2a09847594909e3d15d",
                 "urls":  [
-                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.50/Rylune-0.1.50-release.apk",
-                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.50-release.apk"
+                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.52/Rylune-0.1.52-release.apk",
+                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.52-release.apk"
                          ]
             },
-    "notes":  "## Rylune 0.1.50\n\n真·修好「源恢复了但章节列表还是空的」：详情页的 12 小时缓存短路。\n\n- 上次只改了仓库层的缓存逻辑，但详情页走的是另一条路：它先读本机快照，如果快照在 12 小时内就直接用、根本不刷新 —— 于是那份\"空章节\"快照会一直生效。\n- 现在章节为空的快照一律当作没有缓存：忽略它、重新拉取，拉到正常结果后覆盖。\n- 这条对\"源故障期间打开过的作品\"都有效，重新打开一次就会恢复。"
+    "notes":  "## Rylune 0.1.52\n\n详情页加载中不再被「检查章节更新」自己打断；空快照自动重拉。\n\n- 定位到「一拳超人」这类多话作品的真实情况：loadInfo 要分页拉 300+ 话、耗时 13 秒左右属正常；这期间点「检查章节更新」会把正在跑的加载取消，界面就显示“加载详情失败”。\n- 现在加载中该项会变成「正在检查章节更新…」并禁用，不会自己打断自己。\n- 协程被取消（切页/离开组合）不再记成失败、也不再写错误日志。\n- 空章节快照一律视为没有缓存并重新拉取 —— 源故障期间打开过的作品，重新进入一次就会恢复。\n- 新增诊断日志：loadInfo 解析：\u003cid\u003e，章节 N 话（用于区分“解析出 0 话”和“界面没显示”）。"
 }
