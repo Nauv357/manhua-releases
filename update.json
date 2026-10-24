@@ -1,13 +1,13 @@
 {
-    "version":  "0.1.45",
+    "version":  "0.1.46",
     "apk":  {
-                "name":  "Rylune-0.1.45-release.apk",
-                "size":  16311308,
-                "sha256":  "7f3201439b0c6f248b5e9fbdf8e278685d92f98b7eaabc511a7ff88e004ed8ee",
+                "name":  "Rylune-0.1.46-release.apk",
+                "size":  16311592,
+                "sha256":  "385ebbc785f1d5cd49f926d0f9c1d7d10292cdedb0cdcb2f2d133c165586ed67",
                 "urls":  [
-                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.45/Rylune-0.1.45-release.apk",
-                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.45-release.apk"
+                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.46/Rylune-0.1.46-release.apk",
+                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.46-release.apk"
                          ]
             },
-    "notes":  "## Rylune 0.1.45\n\n修好「源没有返回章节列表」的残留缓存：失败结果不再被缓存。\n\n- 之前源加载失败时，返回的\"空章节\"被当成了正常结果写进内存缓存和磁盘快照，于是源恢复后那些作品仍然显示\"源没有返回章节列表\"。\n- 现在：章节列表为空的结果不写缓存、读到空快照也直接忽略并重新拉取；拉取成功后覆盖旧快照，等于自愈。\n- 之前打不开过的作品，现在重新打开一次就会自动恢复正常。"
+    "notes":  "## Rylune 0.1.46\n\n修「下载完直接退出、没安装」：缺少安装权限时现在会明确提示。\n\n- 原因：系统没给「安装未知应用」权限时，旧代码直接跳到系统设置页，应用被切到后台 —— 看起来就像下载完自己退出了。\n- 现在会先弹一句「需要允许安装未知应用：授权后返回，再点一次安装」，再跳设置；授权后回到应用，点「安装更新」即可，不用重新下载。\n- 安装器拉不起来时会自动换另一种方式再试，仍失败才把具体原因显示出来。\n- 上一版的空章节缓存自愈仍然有效：以前打不开的作品重新打开一次就会恢复。"
 }
