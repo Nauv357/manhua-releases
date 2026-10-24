@@ -1,12 +1,13 @@
 {
-    "version":  "0.1.37",
+    "version":  "0.1.38",
     "apk":  {
-                "name":  "Rylune-0.1.37-release.apk",
-                "size":  16292800,
-                "sha256":  "d287f59c94c896565aca216f689d380eefd7cfa1ab25663b5deb2c4ef6e224a6",
+                "name":  "Rylune-0.1.38-release.apk",
+                "size":  16309548,
+                "sha256":  "8af4f300f9288de3f0d1d182a0eba306233928025451ab38d96f9e95ef3a20dc",
                 "urls":  [
-                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.37/Rylune-0.1.37-release.apk"
+                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.38/Rylune-0.1.38-release.apk",
+                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.38-release.apk"
                          ]
             },
-    "notes":  "## Rylune 0.1.37\n\n拷贝源\"请 1 小时后再试\"解决了：撞墙后不再需要等待，也不用重建会话。\n\n- 根因找到了：拷贝源按\"客户端自己声明的 IP\"记账，而不是只看真实来源。现在每个请求都会声明一个属于我们自己的地址，实测连续读 8 话、每话 20 页都没有再被拦。\n- 修好\"点下一话时提示 JobCancellationException: was cancelled\"的假报错 —— 那是切话时旧协程被取消，以前被当成了加载失败。\n- 修好\"撞墙后界面永久转圈\"：重建会话时关闭旧引擎会卡死，还把锁一直占着；现在关闭放到后台，不再挡住重试。\n- 章节列表分页从 500 改回 100。源站对每页数量有上限，超过 100 会返回\"空列表\"（不报错），上一版因此出现\"详情能进但章节空白\"。\n- 声明的地址只用大陆网段 —— 用境外段会被判成地区不符，章节列表同样会是空的。\n- 兜底：章节接口若仍返回空数据，会自动换一个地址重试；再不行才重建会话。"
+    "notes":  "## Rylune 0.1.38\n\n更新终于快了：安装包改成多连接分片下载 + 断点续传。\n\n- 以前更新动不动十几分钟、甚至一直下不完 —— 因为下载器是单连接、失败就整包从头再来。\n- 现在按 2 MiB 分片、多连接并发（实测同一条线路从 639 KB/s 提到 1073 KB/s），单片断流只重试那一片，不会再整包重下。\n- 服务器不支持分片下载时自动退回单连接（老行为），不影响可用性。\n- 下载地址里新增一条 jsDelivr CDN 线路（放在 gh-proxy 之后做兜底），不同运营商哪条快就用哪条。\n- 上面的改动只影响**以后的更新**；这一次请手动装一下新包。"
 }
