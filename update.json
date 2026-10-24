@@ -1,13 +1,13 @@
 {
-    "version":  "0.1.44",
+    "version":  "0.1.45",
     "apk":  {
-                "name":  "Rylune-0.1.44-release.apk",
-                "size":  16311092,
-                "sha256":  "b786a195619bb76e3721aa7da4d5150c32bf8a522e93e1f4a866c65fd08e94fd",
+                "name":  "Rylune-0.1.45-release.apk",
+                "size":  16311308,
+                "sha256":  "7f3201439b0c6f248b5e9fbdf8e278685d92f98b7eaabc511a7ff88e004ed8ee",
                 "urls":  [
-                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.44/Rylune-0.1.44-release.apk",
-                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.44-release.apk"
+                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.45/Rylune-0.1.45-release.apk",
+                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.45-release.apk"
                          ]
             },
-    "notes":  "## Rylune 0.1.44\n\n修好详情页瞬间失败：一个变量名写错导致的 ReferenceError。\n\n- 上一版为了少发一次请求，加了「未登录就不查收藏状态」，但写成了 if (!token) —— 那个作用域里根本没有 token 这个变量，于是每次打开详情都立刻抛 ReferenceError，2 毫秒就失败（是刚加的错误日志抓到的）。\n- 改成读取已保存的 token（loadData(\"token\")），逻辑不变、不再报错。\n- 另外：拷贝源请求现在强制走 IPv4。实测同一时刻电脑上搜索接口 2 秒返回，平板却 30 秒超时 —— 原因是平板优先走了质量很差的 IPv6 路径。"
+    "notes":  "## Rylune 0.1.45\n\n修好「源没有返回章节列表」的残留缓存：失败结果不再被缓存。\n\n- 之前源加载失败时，返回的\"空章节\"被当成了正常结果写进内存缓存和磁盘快照，于是源恢复后那些作品仍然显示\"源没有返回章节列表\"。\n- 现在：章节列表为空的结果不写缓存、读到空快照也直接忽略并重新拉取；拉取成功后覆盖旧快照，等于自愈。\n- 之前打不开过的作品，现在重新打开一次就会自动恢复正常。"
 }
