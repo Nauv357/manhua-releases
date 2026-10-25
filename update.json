@@ -1,13 +1,13 @@
 {
-    "version":  "0.1.53",
+    "version":  "0.1.56",
     "apk":  {
-                "name":  "Rylune-0.1.53-release.apk",
-                "size":  16313592,
-                "sha256":  "93ec110e6f0330bd71e10ca12c4c5bcccfdf957202f71dc10ec0a6aef42de464",
+                "name":  "Rylune-0.1.56-release.apk",
+                "size":  16314456,
+                "sha256":  "d64feafab74ec820a87a357451e13ca9c018f64a1e5e96ee12f788fc47a8170d",
                 "urls":  [
-                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.53/Rylune-0.1.53-release.apk",
-                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.53-release.apk"
+                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.56/Rylune-0.1.56-release.apk",
+                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.56-release.apk"
                          ]
             },
-    "notes":  "## Rylune 0.1.53\n\n多话作品详情加载更快：章节分页改成并发拉取。\n\n- 300+ 话的作品（比如一拳超人）原来要一页一页串行翻，实测 13.3 秒才出章节列表。\n- 现在剩余分页并发拉取，总耗时接近\"最慢的那一页\"，章节顺序保持不变。\n- 配合上一版：加载期间「检查章节更新」会被禁用，不会再把正在跑的加载打断。"
+    "notes":  "## Rylune 0.1.56\n\n修「打开详情/新漫画要等十几秒」：请求不再排一条队。\n\n- 实测：無職轉生（156 话）打开详情花了 19 秒，其中两个章节分页请求“各耗时 16 秒”，但数据是正常返回的。\n- 原因是所有拷贝源请求共用一个 Semaphore(1)：封面、章节分页、评论全排一条队，单个请求的耗时里一大半是排队等待。\n- 现在放宽到 4 个并发（250ms 的请求间隔仍保留，避免一口气轰服务器）。外部单请求实测本来只要 0.5~1.5 秒。\n- 评论只试 1 次、章节图片列表试 2 次的分级重试也在这一版里。"
 }
