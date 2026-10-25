@@ -1,13 +1,13 @@
 {
-    "version":  "0.1.57",
+    "version":  "0.1.58",
     "apk":  {
-                "name":  "Rylune-0.1.57-release.apk",
-                "size":  16315260,
-                "sha256":  "84ea7618700a9958a11ac3c05fa689b483b5eed4a03aa9c0706eb4378c2e2314",
+                "name":  "Rylune-0.1.58-release.apk",
+                "size":  16315676,
+                "sha256":  "e4e71d371716bd49aa852207f3275765ed064f238db475afa53b6727b9010e3c",
                 "urls":  [
-                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.57/Rylune-0.1.57-release.apk",
-                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.57-release.apk"
+                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.58/Rylune-0.1.58-release.apk",
+                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.58-release.apk"
                          ]
             },
-    "notes":  "## Rylune 0.1.57\n\n修「章节接口返回的结构不认识」：页面列表字段改成兼容多种形状。\n\n- 你这次遇到的报错不是网络问题：某一话的 chapter2 第一次等了 36.5 秒才回、且内容是空壳；换 IP 重试后 1.8 秒就回了，但字段里没有 contents，于是被判成“结构不认识”。\n- 现在页面列表兼容 contents / words / pages / urls 四种字段；都没有时把真实字段名写进错误信息（下一次能直接看出上游改成了什么）。\n- words 缺失时按原顺序排列图片，不再因为取下标失败而崩。\n- 请求队列并发从 1 提到 4（上一版），这次连读 5 话实测每话 0.46~1.15 秒、零重试零重建。"
+    "notes":  "## Rylune 0.1.58\n\n章节图片列表遇到服务端空数据时更耐心地换 IP 重试；慢响应不再白等。\n\n- chapter2 的空壳响应（results 为空）实测是按 IP 概率出现的，2 次不够用 —— 现在给 4 次机会，每次自动换一个 IP。\n- 内容请求的读超时从 30 秒收紧到 8 秒：之前出现过 36.5 秒才返回空壳的响应，白等一次就顶掉两次重试机会。\n- 报错分成两种：服务端返回空数据（换 IP 重试即可）vs 接口字段变了（那才需要改解析）。\n- 图片走 CDN、不带声明 IP，所以一次阅读的 IP 轮换只有 2~3 次（章节 + 评论），不存在“每张图一次”。"
 }
