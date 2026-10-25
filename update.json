@@ -1,13 +1,13 @@
 {
-    "version":  "0.1.56",
+    "version":  "0.1.57",
     "apk":  {
-                "name":  "Rylune-0.1.56-release.apk",
-                "size":  16314456,
-                "sha256":  "d64feafab74ec820a87a357451e13ca9c018f64a1e5e96ee12f788fc47a8170d",
+                "name":  "Rylune-0.1.57-release.apk",
+                "size":  16315260,
+                "sha256":  "84ea7618700a9958a11ac3c05fa689b483b5eed4a03aa9c0706eb4378c2e2314",
                 "urls":  [
-                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.56/Rylune-0.1.56-release.apk",
-                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.56-release.apk"
+                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.57/Rylune-0.1.57-release.apk",
+                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.57-release.apk"
                          ]
             },
-    "notes":  "## Rylune 0.1.56\n\n修「打开详情/新漫画要等十几秒」：请求不再排一条队。\n\n- 实测：無職轉生（156 话）打开详情花了 19 秒，其中两个章节分页请求“各耗时 16 秒”，但数据是正常返回的。\n- 原因是所有拷贝源请求共用一个 Semaphore(1)：封面、章节分页、评论全排一条队，单个请求的耗时里一大半是排队等待。\n- 现在放宽到 4 个并发（250ms 的请求间隔仍保留，避免一口气轰服务器）。外部单请求实测本来只要 0.5~1.5 秒。\n- 评论只试 1 次、章节图片列表试 2 次的分级重试也在这一版里。"
+    "notes":  "## Rylune 0.1.57\n\n修「章节接口返回的结构不认识」：页面列表字段改成兼容多种形状。\n\n- 你这次遇到的报错不是网络问题：某一话的 chapter2 第一次等了 36.5 秒才回、且内容是空壳；换 IP 重试后 1.8 秒就回了，但字段里没有 contents，于是被判成“结构不认识”。\n- 现在页面列表兼容 contents / words / pages / urls 四种字段；都没有时把真实字段名写进错误信息（下一次能直接看出上游改成了什么）。\n- words 缺失时按原顺序排列图片，不再因为取下标失败而崩。\n- 请求队列并发从 1 提到 4（上一版），这次连读 5 话实测每话 0.46~1.15 秒、零重试零重建。"
 }
