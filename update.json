@@ -1,13 +1,13 @@
 {
-    "version":  "0.1.65",
+    "version":  "0.1.66",
     "apk":  {
-                "name":  "Rylune-0.1.65-release.apk",
-                "size":  16400584,
-                "sha256":  "4da58e6eeb8f7dbfee7c8ee6e30eac33e8978eee273e22391a77e31cf0af63a7",
+                "name":  "Rylune-0.1.66-release.apk",
+                "size":  16417308,
+                "sha256":  "96135706b505caa110aebb58cd4bb0d27303df5c1a23931f6727792a91d5c112",
                 "urls":  [
-                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.65/Rylune-0.1.65-release.apk",
-                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.65-release.apk"
+                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.66/Rylune-0.1.66-release.apk",
+                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.66-release.apk"
                          ]
             },
-    "notes":  "## Rylune 0.1.65\n\n文件夹现在能绑 B 漫作品了：绑一次，里面的卷都能看评论，还共用一条「上次看的那一话」。\n\n- 长按文件夹 → 「绑定 B 漫作品…」，搜一次名字就行。按卷扫的资源（Ysj-Msn-mx_01 这种）再也不用一卷一卷手打中文书名。\n- 绑定优先级：某卷自己绑过的用它自己的，否则继承文件夹的。列表里继承来的那条会标「（同文件夹）」，评论图标的颜色也浅一档，一眼能分清。\n- 「上次看的那一话」按文件夹记：在 mx_09 里挑了第 276 话，翻到 mx_08 再点评论，还停在 276。\n- 书自己的单卷绑定仍然保留（想给某一卷单独指一话时用），已有绑定不受影响。"
+    "notes":  "## Rylune 0.1.66\n\n评论栏能看楼中楼了，顶部也贴到了屏幕最上面。\n\n- 评论里带「N 回复」的，下面多了一行「展开 N 条回复」；点开就地显示这一层的回复（昵称、点赞、正文），再点一次收起。同一时间只展开一条，互相不打架，也不会把正文挤没。\n- 楼中楼是一次一条的按需请求（一页 20 条），不会为了某个热门评论把整棵回复树都拉下来。\n- 右侧评论栏现在从屏幕最顶边开始画，状态栏那条也归它管；标题和关闭按钮仍然避开状态栏图标，不会被压住。\n- 顺手把本地阅读这一段的外层状态栏内边距去掉了：以后顶栏、评论栏都直接贴屏，顶部不再留一条缝。"
 }
