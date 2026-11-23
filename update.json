@@ -1,13 +1,13 @@
 {
-    "version":  "0.1.64",
+    "version":  "0.1.65",
     "apk":  {
-                "name":  "Rylune-0.1.64-release.apk",
-                "size":  16400284,
-                "sha256":  "c230a54172257aad17ae7d34e61fc7555c03114555115e85c01118e40e130a61",
+                "name":  "Rylune-0.1.65-release.apk",
+                "size":  16400584,
+                "sha256":  "4da58e6eeb8f7dbfee7c8ee6e30eac33e8978eee273e22391a77e31cf0af63a7",
                 "urls":  [
-                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.64/Rylune-0.1.64-release.apk",
-                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.64-release.apk"
+                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.65/Rylune-0.1.65-release.apk",
+                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.65-release.apk"
                          ]
             },
-    "notes":  "## Rylune 0.1.64\n\n本地阅读终于能调了：翻页/连续、从哪边翻、图片怎么适配，都在顶栏「阅读设置」里。\n\n- 以前本地书只有一套固定读法（横向翻页、从右往左、完整显示），想改没地方改。现在点屏幕中间唤出顶栏，点「阅读设置」就能改：阅读方式（翻页 / 连续）、翻页方向、图片适配。\n- 改完立刻生效，而且写回全局设置——下次打开任何书都沿用，不用每本重设。\n- 「连续」模式特别适合 PDF 单行本：整本竖向连起来滚，不用一下一下翻。\n- 评论入口改成顶栏里的气泡图标，一直在。没绑定 B 漫作品的书，点它会直接弹出搜索/绑定对话框，绑完就进评论栏，不用先回书架。\n- 评论栏会记住这本书上次看的是哪一话（按卷扫的书动辄三百话），下次打开直接回到那一话；那一话要是被下架了，会老老实实显示话列表，不会卡住。"
+    "notes":  "## Rylune 0.1.65\n\n文件夹现在能绑 B 漫作品了：绑一次，里面的卷都能看评论，还共用一条「上次看的那一话」。\n\n- 长按文件夹 → 「绑定 B 漫作品…」，搜一次名字就行。按卷扫的资源（Ysj-Msn-mx_01 这种）再也不用一卷一卷手打中文书名。\n- 绑定优先级：某卷自己绑过的用它自己的，否则继承文件夹的。列表里继承来的那条会标「（同文件夹）」，评论图标的颜色也浅一档，一眼能分清。\n- 「上次看的那一话」按文件夹记：在 mx_09 里挑了第 276 话，翻到 mx_08 再点评论，还停在 276。\n- 书自己的单卷绑定仍然保留（想给某一卷单独指一话时用），已有绑定不受影响。"
 }
