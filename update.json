@@ -1,13 +1,13 @@
 {
-    "version":  "0.1.62",
+    "version":  "0.1.63",
     "apk":  {
-                "name":  "Rylune-0.1.62-release.apk",
-                "size":  16399436,
-                "sha256":  "631c2a52445fcbd365646b9717df42bdd67af2bf2d120152f3ef3ee40eb99b6a",
+                "name":  "Rylune-0.1.63-release.apk",
+                "size":  16399848,
+                "sha256":  "b268ad3f27515490e257f164de9158f8153b6e09bba5ab37947eabf9d2a209be",
                 "urls":  [
-                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.62/Rylune-0.1.62-release.apk",
-                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.62-release.apk"
+                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.63/Rylune-0.1.63-release.apk",
+                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.63-release.apk"
                          ]
             },
-    "notes":  "## Rylune 0.1.62\n\n读本地漫画时也能看 B 漫评论了：点屏幕中间唤出工具栏，右侧拉出评论栏，想看第几话就点第几话。\n\n- 本地书已经绑定过 B 漫作品的，阅读时点一下屏幕中间（唤出顶栏），右边会出现「评论」。\n- 点「评论」拉出右侧栏：先是话列表（标注付费/免费），上面还有一个「第几话」输入框，懒得翻就直接填数字。\n- 点某一话后才去请求那一话的评论，一次只发一两个请求；同一话看第二遍直接用缓存，不再联网。\n- 评论栏随时能收起，收起后继续翻页；收起状态下不会遮挡画面。\n- 为什么让你手动挑：你的资源是按卷扫的（Ysj-Msn-mx_01…09），卷和 B 漫话号没有可靠对应，自动猜会把第 3 卷的评论挂到第 12 话上，比没有更糟。\n- 顺带保留原来的行为：书名里带「第 276 话」这类话号的，打开时仍会把那一话的评论排成最后几页，两种看法都在。"
+    "notes":  "## Rylune 0.1.63\n\n修一个会让 PDF 打开成\"另一本书\"的缓存 bug：同一个文件夹里的几本书，页表会互相覆盖。\n\n- 现象：从同一个文件夹导入的几本 PDF，打开其中一本却显示成另一本的页，甚至只有 3 页写着 P1/P2/P3 的测试图。\n- 原因：页表的缓存文件名，是按书的 id 截前 64 个字符生成的。文件夹里的书 id 是整条 content:// 路径，同一目录下前缀完全一样，截断后几本书、连同该目录下的子文件夹都算成了同一个缓存。\n- 现在改成对完整 id 取 SHA-1，一本书一个 key，不会再撞。\n- 副作用是旧的页表作废：升级后第一次打开会重新数一遍页（PDF 几乎瞬间，CBR 首次要解压），之后照常。\n- 顺手让列表别再显示过期页数：页表没了就显示「页数未知（首次打开时统计）」，不会出现「列表写 3 页、打开却是 194 页」。"
 }
