@@ -1,13 +1,13 @@
 {
-    "version":  "0.1.58",
+    "version":  "0.1.59",
     "apk":  {
-                "name":  "Rylune-0.1.58-release.apk",
-                "size":  16315676,
-                "sha256":  "e4e71d371716bd49aa852207f3275765ed064f238db475afa53b6727b9010e3c",
+                "name":  "Rylune-0.1.59-release.apk",
+                "size":  16365340,
+                "sha256":  "e0619b10cb700abf68e7a919a8b708d7856b36279d6f4cb67aacad37627432d6",
                 "urls":  [
-                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.58/Rylune-0.1.58-release.apk",
-                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.58-release.apk"
+                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.59/Rylune-0.1.59-release.apk",
+                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.59-release.apk"
                          ]
             },
-    "notes":  "## Rylune 0.1.58\n\n章节图片列表遇到服务端空数据时更耐心地换 IP 重试；慢响应不再白等。\n\n- chapter2 的空壳响应（results 为空）实测是按 IP 概率出现的，2 次不够用 —— 现在给 4 次机会，每次自动换一个 IP。\n- 内容请求的读超时从 30 秒收紧到 8 秒：之前出现过 36.5 秒才返回空壳的响应，白等一次就顶掉两次重试机会。\n- 报错分成两种：服务端返回空数据（换 IP 重试即可）vs 接口字段变了（那才需要改解析）。\n- 图片走 CDN、不带声明 IP，所以一次阅读的 IP 轮换只有 2~3 次（章节 + 评论），不存在“每张图一次”。"
+    "notes":  "## Rylune 0.1.59\n\n本地书架现在能直接导入 PDF 和 CBR（RAR 漫画包）。\n\n- 「PDF/CBR」按钮：一次可选多个文件，按后缀自动分到 PDF、CBR/RAR、CBZ/ZIP。\n- PDF 用系统自带的 PdfRenderer 按需渲染，不额外依赖库；打开时不会整本转图片，翻到哪页渲染哪页。\n- CBR 用 junrar 解压到应用目录（第一次打开会慢一点），同一本书第二次打开直接复用；遇到扩展名骗人的 ZIP 会自动兜底。\n- PDF/CBR 的页表会在导入时校验，打不开的文件当场报错，不会进了书架才发现是空白。\n- 老书架数据不受影响：已有书目按原格式识别，不需要重新导入。\n- 列表里每本书的格式标成了 PDF / CBR / ZIP / DIR，之前一律显示 ZIP。\n- 从文件管理器直接打开的 PDF/CBR 也会用真实文件名，不再叫「未命名」。\n- 「选目录」现在也认目录里的 PDF / CBR / CBZ：一个文件夹里的漫画文件会各算一本，不用再一个一个点「PDF/CBR」挑。"
 }
