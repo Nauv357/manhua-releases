@@ -1,13 +1,13 @@
 {
-    "version":  "0.1.63",
+    "version":  "0.1.64",
     "apk":  {
-                "name":  "Rylune-0.1.63-release.apk",
-                "size":  16399848,
-                "sha256":  "b268ad3f27515490e257f164de9158f8153b6e09bba5ab37947eabf9d2a209be",
+                "name":  "Rylune-0.1.64-release.apk",
+                "size":  16400284,
+                "sha256":  "c230a54172257aad17ae7d34e61fc7555c03114555115e85c01118e40e130a61",
                 "urls":  [
-                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.63/Rylune-0.1.63-release.apk",
-                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.63-release.apk"
+                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.64/Rylune-0.1.64-release.apk",
+                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.64-release.apk"
                          ]
             },
-    "notes":  "## Rylune 0.1.63\n\n修一个会让 PDF 打开成\"另一本书\"的缓存 bug：同一个文件夹里的几本书，页表会互相覆盖。\n\n- 现象：从同一个文件夹导入的几本 PDF，打开其中一本却显示成另一本的页，甚至只有 3 页写着 P1/P2/P3 的测试图。\n- 原因：页表的缓存文件名，是按书的 id 截前 64 个字符生成的。文件夹里的书 id 是整条 content:// 路径，同一目录下前缀完全一样，截断后几本书、连同该目录下的子文件夹都算成了同一个缓存。\n- 现在改成对完整 id 取 SHA-1，一本书一个 key，不会再撞。\n- 副作用是旧的页表作废：升级后第一次打开会重新数一遍页（PDF 几乎瞬间，CBR 首次要解压），之后照常。\n- 顺手让列表别再显示过期页数：页表没了就显示「页数未知（首次打开时统计）」，不会出现「列表写 3 页、打开却是 194 页」。"
+    "notes":  "## Rylune 0.1.64\n\n本地阅读终于能调了：翻页/连续、从哪边翻、图片怎么适配，都在顶栏「阅读设置」里。\n\n- 以前本地书只有一套固定读法（横向翻页、从右往左、完整显示），想改没地方改。现在点屏幕中间唤出顶栏，点「阅读设置」就能改：阅读方式（翻页 / 连续）、翻页方向、图片适配。\n- 改完立刻生效，而且写回全局设置——下次打开任何书都沿用，不用每本重设。\n- 「连续」模式特别适合 PDF 单行本：整本竖向连起来滚，不用一下一下翻。\n- 评论入口改成顶栏里的气泡图标，一直在。没绑定 B 漫作品的书，点它会直接弹出搜索/绑定对话框，绑完就进评论栏，不用先回书架。\n- 评论栏会记住这本书上次看的是哪一话（按卷扫的书动辄三百话），下次打开直接回到那一话；那一话要是被下架了，会老老实实显示话列表，不会卡住。"
 }
