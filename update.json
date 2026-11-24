@@ -1,13 +1,13 @@
 {
-    "version":  "0.1.67",
+    "version":  "0.1.68",
     "apk":  {
-                "name":  "Rylune-0.1.67-release.apk",
-                "size":  16417660,
-                "sha256":  "0ff26271ac11b40a4943b615b741acf4913c041c33fa2e2b3cdb1a4661267189",
+                "name":  "Rylune-0.1.68-release.apk",
+                "size":  16417840,
+                "sha256":  "5e211b682b4ecdb00109df2e1e4953b9a2d0351ed30eeacdad76e12db8b120e6",
                 "urls":  [
-                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.67/Rylune-0.1.67-release.apk",
-                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.67-release.apk"
+                             "https://github.com/Nauv357/manhua-releases/releases/download/v0.1.68/Rylune-0.1.68-release.apk",
+                             "https://gcore.jsdelivr.net/gh/Nauv357/manhua-releases@apk/Rylune-0.1.68-release.apk"
                          ]
             },
-    "notes":  "## Rylune 0.1.67\n\n评论栏加了「上一话 / 下一话」，话列表会自动滚到你上次看的那一话附近。\n\n- 评论栏顶部现在有「◀ 第 N 话」和「第 M 话 ▶」，一句话就能前后翻，不用先退回话列表。\n- 话列表打开时会自动滚到你上次看过的那一话；没有记录就滚到书名里能读出来的那话附近（比如文件夹/文件名写着 276）。只能算「附近」，因为 B 漫的话号不一定连续，最后几格还得你自己挑。\n- 「第几话」输入框按键盘上的完成键也能直接跳，不用去点「查看」。\n- 说明：到这里「按话看评论」已经够顺手了；再往下的「按页弹幕」需要 B 站登录态和页面内签名，技术上能走但要做 PC 端工具，我先把话级这条打磨完。"
+    "notes":  "## Rylune 0.1.68\n\n本地书可以重命名、也可以多选批量删除了。\n\n- 长按进入多选后，选中一本会多出「重命名」；选中多本可以「删除」——都只改应用里的书架，磁盘上的 PDF/CBZ/CBR 一个都不会动。\n- 重命名只影响书架显示和评论栏里的书名，文件名保持原样，免得你在文件管理器里找不到。\n- 删除会连同这本书的页数缓存、评论页缓存一起清掉，重新导入时不会读到旧数据。"
 }
